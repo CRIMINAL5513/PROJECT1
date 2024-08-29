@@ -1,0 +1,244 @@
+
+#:import webbrowser webbrowser
+ScreenManager:
+    Screen:
+        name: "main"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:4
+                Image:
+                    source:'IMG/logo1.png'
+                Label:
+                    text:'CRIMINAL APP'
+                    font_size: 32
+                TextInput:
+                    id: Passw
+                    text: 'Pleas Inter Your Passworld: '
+                    multiline: False
+                    size_hint: (0.1,0.17)
+                Label:
+                    text: '@CRIMINAL-_-5513 2024'
+                    font_size: 12
+            Button:
+                on_release:
+                text: "LOGIN"
+                size_hint: (0.1,0.1)
+                background_color: (100/255.0,1,1,1)
+                on_release:
+                    root.transition.direction = 'up'
+                    app.root.current = "second" if Passw.text == "CRIMINAL5513" or Passw.text == "criminal5513" else "error"
+    Screen:
+        name: "error"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:4
+                Image:
+                    source: 'IMG/logo3.png'
+                Label:
+                    text: "THE PASSWORLD IS INCORRECT"
+                    font_size: 22
+                Label:
+                    text: "PLEAS ENTER IT CORRECTLY"
+                    font_size: 12
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.3)
+                    background_color: (100/255.0,1,1,1)
+                    on_release:
+                        app.root.current = "main"
+                        root.transition.direction = "down"
+    Screen:
+        name: 'second'
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:2
+                Image:
+                    source:'IMG/logo2.png'
+                Label:
+                    text: "Welcome To My Profile"
+            GridLayout:
+                cols:2
+                GridLayout:
+                    rows:3
+                    Button:
+                        text:"INSTAGRAM"
+                        background_color: (1,0,0,1)
+                        on_release:
+                            app.root.current = "instagram"
+                            root.transition.direction = "right"
+                    Button:
+                        text:"DISCORD"
+                        background_color:(50/250,50/250,1,1)
+                        on_release:
+                            app.root.current = "discord"
+                            root.transition.direction = "left"
+                    Button:
+                        text:"WHATSAPP"
+                        background_color: (0,1,0,1)
+                        on_release:
+                            app.root.current = "whatsapp"
+                            root.transition.direction = "right"
+                    Button:
+                        text:"TELEGRAM"
+                        background_color: (0,0,1,1)
+                        on_release:
+                            app.root.current = "telegram"
+                            root.transition.direction = "left"
+                    Button:
+                        text:"NUMBER"
+                        background_color: (50/255,1,50/255,1)
+                        on_release:
+                            app.root.current = "number"
+                            root.transition.direction = "right"
+                    Button:
+                        text:"EFOOTBALL"
+                        background_color: (1,1,0,1)
+                        on_release:
+                            app.root.current = "efootball"
+                            root.transition.direction = "left"
+            Button:
+                text: "Go Back"
+                size_hint: (0.1,0.2)
+                background_color: (188/255,143/255,143/255,1)
+                on_release:
+                    root.transition.direction = 'down'
+                    app.root.current = "main"
+    Screen:
+        name: "instagram"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:5
+                Image:
+                    source: 'IMG/logo4.png'
+                Label:
+                    text: "INSTAGRAM\nLINK"
+                    font_size:22
+                Button:
+                    text: "FIRST ACCOUNT"
+                    size_hint: (0.1,0.2)
+                    background_color: (1,0,0,1)
+                    on_release:
+                        webbrowser.open('https://www.instagram.com/jawad_5513/')
+                Button:
+                    text: "SECOND ACCOUNT"
+                    size_hint: (0.1,0.2)
+                    background_color: (1,0,0,1)
+                    on_release:
+                        webbrowser.open('https://www.instagram.com/cri_5513/')
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.2)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "left"
+    Screen:
+        name: "discord"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:4
+                Image:
+                    source: 'IMG/logo8.png'
+                Label:
+                    text: "DISCORD\nLINK"
+                    font_size:22
+                Button:
+                    text: "LINK"
+                    size_hint: (0.1,0.2)
+                    background_color: (50/250,50/250,1,1)
+                    on_release:
+                        webbrowser.open('https://discord.com/invite/meaUVHmz')
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.2)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "right"
+    Screen:
+        name:"whatsapp"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:5
+                Image:
+                    source: 'IMG/logo6.png'
+                Label:
+                    text: "WHATSAPP"
+                    font_size:22
+                Image:
+                    source: 'IMG/logo10.png'
+                Label:
+                    text: "(+964)07805047012"
+                    font_size:22
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.4)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "left"
+    Screen:
+        name: "number"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:4
+                Image:
+                    source: 'IMG/logo7.png'
+                Label:
+                    text: "NUMBER\nPHONE NUMBER\n(+964)07805047012"
+                    font_size:22
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.2)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "left"
+    Screen:
+        name: "telegram"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:5
+                Image:
+                    source: 'IMG/logo5.png'
+                Image:
+                    source: 'IMG/logo11.png'
+                Label:
+                    text: "TELEGRAM"
+                    font_size:22
+                Label:
+                    text: '@JAWADALKADHEMI'
+                    font_size: 22
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.4)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "right"
+    Screen:
+        name: "efootball"
+        GridLayout:
+            cols:1
+            GridLayout:
+                rows:4
+                Image:
+                    source: 'IMG/logo9.png'
+                Label:
+                    text: "EFOOTBALL\nUSER NAME\nCRIMINAL-_-5513"
+                    font_size:22
+                Button:
+                    text: "Go Back"
+                    size_hint: (0.1,0.2)
+                    background_color: (188/255,143/255,143/255,1)
+                    on_release:
+                        app.root.current = 'second'
+                        root.transition.direction = "right"
